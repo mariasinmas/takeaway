@@ -23,6 +23,9 @@
 	  console.log("La página está cargada");
 	  
     });
+	 $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
         
       </script>	  
 
@@ -34,7 +37,6 @@
              <li><a href="index.html">Inicio</a></li>
              <li><a href="info.html">Info</a></li>
              <li><a href="fotos.html">Fotos</a></li>
-			 <li><a href="contacto.html">Contacto</a></li>
            </ul>
          </div>
       </nav>
@@ -72,6 +74,24 @@
 		     </div>
 	  </section>
 	  
+	  
+	  <section>
+	  <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+  </ul>
+	    
+	  </section>
 	  
 	  
 	  

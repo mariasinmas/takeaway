@@ -22,3 +22,6 @@ h2, ul a.btn-floating{text-shadow: 5px 5px 4px rgba(119, 119, 119, 0.99);}
                             opacity:1;
 							visibility: visible;
 							}		 
+.margentop{margin-top:10px;}	
+.margensup{margin-sup:10px;}		
+nav {z-index:1000}				

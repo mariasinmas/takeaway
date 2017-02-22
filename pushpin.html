@@ -23,6 +23,19 @@
 	  console.log("La página está cargada");
 	  
     });
+	 $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+  
+       $('.pushpin-demo-nav').each(function() {
+    var $this = $(this);
+    var $target = $('#' + $(this).attr('data-target'));
+    $this.pushpin({
+      top: $target.offset().top,
+      bottom: $target.offset().top + $target.outerHeight() - $this.height()
+    });
+  });
+        
         
       </script>	  
 
@@ -34,10 +47,58 @@
              <li><a href="index.html">Inicio</a></li>
              <li><a href="info.html">Info</a></li>
              <li><a href="fotos.html">Fotos</a></li>
-			 <li><a href="contacto.html">Contacto</a></li>
            </ul>
          </div>
       </nav>
+	  
+	  <section>
+      <div id="blue" class="block blue">
+  <nav class="pushpin-demo-nav pinned" data-target="blue" style="top: 0px;">
+    <div class="nav-wrapper light-blue">
+      <div class="container">
+        <a href="#" class="brand-logo">Blue</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#!">Blue Link 1</a></li>
+          <li><a href="#!">Blue Link 2</a></li>
+          <li><a href="#!">Blue Link 3</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+    <div id="red" class="block red lighten-1">
+  <nav class="pushpin-demo-nav pin-top" data-target="red" style="top: 0px;">
+    <div class="nav-wrapper red">
+      <div class="container">
+        <a href="#" class="brand-logo">Red</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#!">Red Link 1</a></li>
+          <li><a href="#!">Red Link 2</a></li>
+          <li><a href="#!">Red Link 3</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+    <div id="green" class="block green lighten-1">
+  <nav class="pushpin-demo-nav pin-top" data-target="green" style="top: 0px;">
+    <div class="nav-wrapper green">
+      <div class="container">
+        <a href="#" class="brand-logo">Green</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#!">Green Link 1</a></li>
+          <li><a href="#!">Green Link 2</a></li>
+          <li><a href="#!">Green Link 3</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+    
+	
+	  </section>
 	  
 	  <section id="carrusel" class="hide-on-small-only">
 	       <div class="carousel carousel-slider">
@@ -72,6 +133,24 @@
 		     </div>
 	  </section>
 	  
+	  
+	  <section>
+	  <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+  </ul>
+	    
+	  </section>
 	  
 	  
 	  

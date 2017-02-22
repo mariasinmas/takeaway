@@ -9,41 +9,55 @@
 	  <link type="text/css" rel="stylesheet" href="css/styles.css">
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  
+	  <style>
+      html, body, .block {
+        height: auto;
+      }
+      nav ul li a:hover, nav ul li a.active {
+        background-color: rgba(0,0,0,.1);
+      }
+      footer {
+        padding-left: 0;
+      }
+    </style>
     </head>
 
     <body>
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
-      <script>
-	   $(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the    modal  ID that wants to be triggered
-      $('.modal').modal();
-	   $('#modal1').modal('open');
-      });
-      </script>	  
-	  <nav>
-         <div class="nav-wrapper purple darken-4 ">
-           <a href="#" class="brand-logo">Take Away</a>
-           <ul id="nav-mobile" class="right hide-on-med-and-down">
-             <li class="desplegable">
-			 <a href="index.html">Inicio</a>
-			   <ul class="submenu" >
-			      <li><a href="#">Ensaladas</a></li>
-                  <li><a href="#">Principales</a></li>
-                  <li><a href="#">Postres</a></li>
-				</ul>  
-			 
-			 </li>
-             <li><a href="info.html">Info</a></li>
-             <li><a href="fotos.html">Fotos</a></li>
-           </ul>
-         </div>
-      </nav>
-	  <!--Ensaladas-->
-	  <section id="ensaladas">
-	      <h2 class="center-align  green lighten-1 white-text">Ensaladas</h2>
-	      <div class="row">
+        <script>
+		$(document).ready(function(){
+		$('.pushpin-demo-nav').each(function() {
+    var $this = $(this);
+    var $target = $('#' + $(this).attr('data-target'));
+    $this.pushpin({
+      top: $target.offset().top,
+      bottom: $target.offset().top + $target.outerHeight() - $this.height()
+    });
+  });
+        
+    $('.target').pushpin({
+      top: 0,
+      bottom: 1000,
+      offset: 0
+    });
+  });
+		</script>
+	  
+	  <div id="blue" class="block purple">
+  <nav class="pushpin-demo-nav pinned" data-target="blue" style="top: 0px;">
+    <div class="nav-wrapper purple">
+      <div class="container">
+        <a href="#" class="brand-logo">Ensaladas</a>
+       
+      </div>
+    </div>
+  </nav>
+  <section id="ensaladas">
+	      
+	      <div class="row margentop">
 	         <div class="col s12 m6 l3">
 			 <div class="card">
              <div class="card-image waves-effect waves-block waves-light">
@@ -163,9 +177,21 @@
            </div>
 		 </div>
 	  </section>
-	  <!--Principales-->
-	  <section id="principales">
-	      <h2 class="center-align pink accent-4 white-text">Arroces y Pastas</h2>
+	  
+</div>
+
+<div id="red" class="block  purple lighten-1">
+  <nav class="pushpin-demo-nav pin-top" data-target="red" style="top: 0px;">
+    <div class="nav-wrapper purple lighten-1">
+      <div class="container">
+        <a href="#" class="brand-logo">Arroces y pastas</a>
+        
+      </div>
+    </div>
+  </nav>
+  
+  <section id="principales">
+	      
 	      <div class="row">
 	         <div class="col s12 m6 l3">
 			 <div class="card">
@@ -260,7 +286,7 @@
             <img class="activator" src="img/tallarinescongambasycalamar.jpg">
            </div>
            <div class="card-content">
-           <span class="card-title activator grey-text text-darken-4">Tallarines con Gambas y Calamar<i class="material-icons right">more_vert</i></span>
+           <span class="card-title activator grey-text text-darken-4">Tallarines con Gambas<i class="material-icons right">more_vert</i></span>
            <p></p>
 		   
 		   <div class="fixed-action-btn horizontal" style="position:absolute; display: inline-block; right:10px; top:10px">
@@ -284,9 +310,24 @@
            </div>
 		 </div>
 	  </section>
-	  <!--Postres-->
-	  <section id="postres">
-	      <h2 class="text-align center blue accent-2 white-text">Postres</h2>
+	  
+  
+  
+  
+</div>
+
+<div id="green" class="block purple lighten-2">
+  <nav class="pushpin-demo-nav pin-top" data-target="green" style="top: 0px;">
+    <div class="nav-wrapper purple lighten-2">
+      <div class="container">
+        <a href="#" class="brand-logo">Postres</a>
+        
+      </div>
+    </div>
+  </nav>
+  
+  <section id="postres">
+	      
 	      <div class="row">
 	         <div class="col s12 m6 l3">
 			 <div class="card">
@@ -403,46 +444,10 @@
            </div>
 		 </div>
 	  </section>
-	  	  	<footer class="page-footer purple darken-4">
-               <div class="container">
-                <div class="row">
-                <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright purple darken-3 ">
-            <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-          </div>
-        </footer>
-		<!-- Modal Structure -->
-        <div id="modal1" class="modal">
-        <div class="modal-content">
-        <h4>Subscríbete a nuestra Newsletter</h4>
-        <form method="post" action="php/recibeNewsletter.php">
-		<div class="input-field">
-		<input maxlenght="100" type="email" name="email" id="email">
-		<label for="email">Tu correo</label>
-		</div>
-		<button clas="btn waves-effect-light" type="submit">Suscribirme</button>
-		</form>
-        </div>
-        <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
-        </div>
-        </div>
+	  	  	
+  
+  
+</div>
+	  
     </body>
   </html>
