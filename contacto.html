@@ -13,7 +13,8 @@
     <body>
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>	  
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script src="js/contacto.js"></script>	  
 	  <nav>
          <div class="nav-wrapper purple darken-4 ">
            <a href="#" class="brand-logo">Take Away</a>
@@ -25,30 +26,56 @@
            </ul>
          </div>		 
   </nav>
+  <div class="row">
+     <div class="col s12 m6 l6">
+         <div class="col s12 m12 l12" >
+         <h2>Info</h2>
+         <p>Horario: Lun-Vie de 10 a 15 y de 19 a 22h</p>
+         <p>Sábados y Domingos de 9 a 16 y de 19 a 23h</p>
+         <p>Tél: 98 657 38 57</p>
+         <p>E-mail: lavidaesbella@info.com</p>
+         </div>
+         <div class="col s12 m12 l12" >
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.052136287376!2d2.1069065154253344!3d41.372951979265416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a498fcc3955d69%3A0x88126ea4e5bb0c98!2sCarrer+de+Llevant%2C+62%2C+08905+L&#39;Hospitalet+de+Llobregat%2C+Barcelona!5e0!3m2!1ses!2ses!4v1490293035618" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+         </div>
+     </div>
+     <div class="col s12 m6 l6">
+      
     <section id="contacto">
+    <h2 style="padding-left:1em" >Formulario Contacto</h2>
       <form id="contactForm" action="php/recibedatos.php" method="post">
           <div class="container">
-		   <div class="row">
-		    <div class="col l6 m6 s12 input-field">
-			    <input placeholder="Nombre y apellidos" id="nombreApellido" name="nombreApellido" type="text" class="validate" required value="María Chousa">
-                <label for="nombreApellido">Nombre</label>			
-			</div>
-			<div class="col l6 m6 s12 input-field">
-			   <input  id="email" name="email" type="email" class="validate" required value="mail@mail.es">
-               <label for="email" data-error="Email incorrecto">Email</label>	  
-			</div>
-			<div class="col l12 m12 s12 input-field">
-			 <textarea  id="mensaje" class="materialize-textarea" name="mensaje"></textarea>
-			 <label for="mensaje">Mensaje</label>
-			</div>
-			 <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+       <div class="row">
+        <div class="col l6 m6 s12 input-field">
+          <input placeholder="Nombre y apellidos" id="nombreApellidos" name="nombreApellidos" type="text" class="validate" required value="María Chousa">
+                <label for="nombreApellidos">Nombre</label>      
+      </div>
+      <div class="col l6 m6 s12 input-field">
+         <input  id="email" name="email" type="email" class="validate" required value="mail@mail.es">
+               <label for="email" data-error="Email incorrecto">Email</label>   
+      </div>
+      <div class="col l12 m12 s12 input-field">
+       <textarea  id="mensaje" class="materialize-textarea" name="mensaje"></textarea>
+       <label for="mensaje">Mensaje</label>
+      </div>
+       <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
              <i class="material-icons right">send</i>
              </button>
-		   </div>
-          </div> 		 
-		</form>
-	  </section>
-	  
+       </div>
+          </div>     
+    </form>
+    </section>
+    <section id="gracias">
+    <div class="container center">
+    <h2>Gracias</h2>
+    <p>Tu mensaje ha sido recibido con éxito, en breve recibirás noticias nuestras</p>
+    <i class="material-icons large purple-text">thumb_up</i>
+    </div>
+      
+    </section>
+    </div>
+     </div> 
+  
 	  <footer class="page-footer purple darken-4">
           <div class="container">
             <div class="row">
