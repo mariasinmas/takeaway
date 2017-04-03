@@ -2,6 +2,8 @@
 	$(document).ready(function(){
 			$('.modal').modal();
 			$('#modal1').modal('open');
+			$(".button-collapse").sideNav();
+			$('#pasaCajaBtn').show ();
 			var debug=true;
 			//hayCarrito rescata la variable de localstorage para 
 			//rescatar los productos añadidos al carrito
@@ -9,6 +11,7 @@
 			if (hayCarrito!=null){
 				hayCarrito=JSON.parse(hayCarrito);
 				$('#hayProductos').remove();
+				$('#pasaCajaBtn').show();
 				pintaModal(hayCarrito);
 			}	
 
@@ -38,18 +41,18 @@
 function pintaCard(id,titulo,img,precio,descripcion,cat){
 		console.log("pintaCard: "+cat);
 		var card =`
-		<div class="col s6 m4 l3">
+		<div class="col s12 m4 l3">
 			<div class="card">
 				<div class="card-image waves-effect waves-block waves-light">
-					<div class="fixed-action-btn horizontal" style="position: absolute; display: inline-block; right: 14px;top:14px">
-				<a class="btn-floating btn-large red">
-				  <i class="large material-icons">shopping_basket</i>
+					<div class="fixed-action-btn horizontal" style=" position: absolute; display: inline-block; right:5px;top:5px">
+				<a class="btn-floating btn-large green lighten-2">
+				  <i class="large material-icons">shopping_cart</i>
 				</a>
 				<ul>
-				  <li><a onclick="addCart(${id},1,${precio},'${titulo}')" class="btn-floating red center">1x</a></li>
-				  <li><a onclick="addCart(${id},2,${precio},'${titulo}')" class="btn-floating yellow darken-1 center">2x</a></li>
-				  <li><a onclick="addCart(${id},3,${precio},'${titulo}')" class="btn-floating green center">3x</a></li>
-				  <li><a onclick="addCart(${id},4,${precio},'${titulo}')" class="btn-floating blue center">4x</a></li>
+				  <li><a onclick="addCart(${id},4,${precio},'${titulo}')" class="btn-floating green lighten-2 center">4x</a></li>
+				  <li><a onclick="addCart(${id},3,${precio},'${titulo}')" class="btn-floating green lighten-2 center">3x</a></li>
+				  <li><a onclick="addCart(${id},2,${precio},'${titulo}')" class="btn-floating green lighten-2 center">2x</a></li>
+				  <li><a onclick="addCart(${id},1,${precio},'${titulo}')" class="btn-floating green lighten-2 center">1x</a></li>
 				</ul>
 			  </div>
 					<img class="activator" src="${img}">
@@ -76,6 +79,7 @@ function pintaCard(id,titulo,img,precio,descripcion,cat){
 			$('#postreRow').append(card);
 			break;
 			default:console.warn("Existen platos que no coinciden con categoría");
+
 		}
 	}
 function addCart(id,cantidad,precio,titulo){	
@@ -96,20 +100,22 @@ function addCart(id,cantidad,precio,titulo){
 		}
 	}
 	if (!existeProduct){
-		cartExist.push({id:id,cantidad:cantidad,precio:precio*cantidad,titulo:titulo});
+		cartExist.push({id:id,cantidad:cantidad,precio:((precio*cantidad).toFixed(2)),titulo:titulo});
 	}
 	pintaModal(cartExist);
 	}
 	//este else controla que es la primera vez que se añaden productos al carrito
 	else {
 		//Es en el caso que previamente no existan productos en el carrito
-		cartExist=[{id:id,cantidad:cantidad,precio:precio*cantidad,titulo:titulo}];
+		cartExist=[{id:id,cantidad:cantidad,precio:((precio*cantidad).toFixed(2)),titulo:titulo}];
 		$('#hayProductos').remove();
 		
 		pintaModal(cartExist);
+
 		
 	}	
 	console.log(cartExist);
+	$('#pasaCajaBtn').show();
 	var JsonCart=JSON.stringify(cartExist);
 	localStorage.setItem("JsonCart",JsonCart);
 }
@@ -122,7 +128,7 @@ function pintaModal(hayCarrito){
 					var cantidad=hayCarrito[i].cantidad;
 					var precio=hayCarrito[i].precio;
 					var rowProduct=`
-						<tr><td>${nombre}</td><td>${cantidad}</td><td>${precio*cantidad}</td></tr>
+						<tr><td>${nombre}</td><td>${cantidad}</td><td>${precio}</td></tr>
 					 `;
 					$('#resProducts').append(rowProduct);
 

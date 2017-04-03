@@ -24,14 +24,19 @@
       }
 
       $('#btnPay').click(function (){
-        var dataCart=JSON.stringify(hayCarrito);
+        var hayCarrito=localStorage.getItem('JsonCart');
+        console.log(hayCarrito);
         $.ajax({
           url: 'php/recibepedido.php',
           type: 'POST',
           dataType: 'json',
-          data: dataCart,
+          data: hayCarrito,
           success : function(result){
             console.log("Se guardó correctamente el pedido");
+            console.log(result);
+            localStorage.clear('JsonCart');
+            $('#checkout').fadeOut();
+            $('#thanks').fadeIn(1500);
             
           },
           error: function(result){
@@ -49,7 +54,7 @@ function pintaModal(hayCarrito){
           var cantidad=hayCarrito[i].cantidad;
           var precio=hayCarrito[i].precio;
           var rowProduct=`
-            <tr><td>${nombre}</td><td>${cantidad}</td><td>${precio*cantidad}</td></tr>
+            <tr><td>${nombre}</td><td>${cantidad}</td><td>${precio}</td></tr>
            `;
           $('#resProducts').append(rowProduct);
 
@@ -75,6 +80,11 @@ function pintaModal(hayCarrito){
       <div class="row">
       <button id="btnPay" class="btn left waves-effect btn-flat green white-text">Finalizar</button>
       </div>
+    </section>
+    <section id="thanks" style="display: none">
+    <div class="valign_wrapper green lighten-2" style="height:400px">
+    <h5 style= "width: 100%" class="center white-text">Tu pedido se ha completado con éxito. Muchas gracias!!</h5>
+    </div>
     </section>
    <footer class="page-footer purple darken-4">
           <div class="container">
